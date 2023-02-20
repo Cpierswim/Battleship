@@ -1,6 +1,7 @@
 from board import Board
 from coordinate import Coordinate
 from ship import Ship
+from helper import Helper
 
 class Player:
     def __init__(self, name, board_height, board_width) -> None:
@@ -19,9 +20,10 @@ class Player:
 
     def place_unassigned_ships(self):
         for unassigned_ship in self.unassigned_ships:
-            print("\n\n\n\n\n\n\n\n\n\n\n\n")
+            #print("\n\n\n\n\n\n\n\n\n\n\n\n")
+            Helper.clearscreen()
             self.display_board_without_coordinates(Board.DISPLAY_SHIP_CHARS_YES)
-            print(f"Placing {unassigned_ship[0]} (Size: {unassigned_ship[2]})")
+            print(f"{self.name}: Placing {unassigned_ship[0]} (Size: {unassigned_ship[2]})")
             valid_coordinate_found = False
             while not valid_coordinate_found:
                 try:
