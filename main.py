@@ -1,9 +1,8 @@
-from board import Board
-from ship import Ship
-from player import Player
+from game import Game
 
-player_one = Player("Player 1", 10, 10)
-player_one.place_unassigned_ships()
+game = Game()
 
+game.create_players(2)
+game.place_ships()
 
 
