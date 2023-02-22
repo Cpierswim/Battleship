@@ -34,5 +34,12 @@ class Ship:
                 if coordinate.ship != None:
                     raise Exception("Ship already placed there")
                 coordinate.ship = self
+
+    def is_sunk(self) -> bool:
+        return self.hits == self.size
+
+    def register_hit(self):
+        self.hits += 1
+        return self.is_sunk()
             
 
