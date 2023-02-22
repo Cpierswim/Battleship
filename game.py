@@ -9,6 +9,7 @@ class Game:
 
     def __init__(self) -> None:
         self.player_list = []
+        Game.display_instructions()
 
     def create_players(self, number_to_create):
         Helper.clearscreen()
@@ -39,10 +40,6 @@ class Game:
             print(f"{player.name} is finished placing their ships")
             input("Input anything to continue to the next player: ")
 
-    def temp_place_ships(self):
-        for player in self.player_list:
-            player.temp_placeships()
-
     def is_any_player_dead(self):
         for player in self.player_list:
             if player.is_all_ships_sunk():
@@ -68,6 +65,19 @@ class Game:
         else:
             print("Something is wrong")
 
+    def display_instructions():
+        Helper.clearscreen()
+        print("Welcome to Battleship")
+        print("---------------------\n\n")
+        print("You will be able to enter the names of both players. Once you have done this, the first player will be taken")
+        print("to the screen where they will be able to enter their ships. To place a ship:")
+        print("\n1. Enter the coordinates of where you would like the ship to start at")
+        print("2. You will then be asked if you want to place the ship to the right from that point, or down from that point")
+        print("3. Once placed, ships cannot be moved")
+        print("\n\nThis will repeat for each ship. After you press enter, you will be given time with a clear screen so that")
+        print("the players can switch without seeing where the other has placed their ships. The second person will then place")
+        print("their ships and then the game will begin. Take turns entering coordinates until all the ships are sunk!")
+        input("\n\n\nPress ENTER to continue")
 
     def perform_player_switch():
         Helper.clearscreen()

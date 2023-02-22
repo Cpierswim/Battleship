@@ -22,23 +22,6 @@ class Player:
     def display_board_with_coordinates(self, board_display_names_status):
         self.board.display_board_with_coordinates(board_display_names_status)
 
-    def temp_placeships(self):
-        Helper.clearscreen()
-        print(f"Placing ships for {self.name}")
-        '''ship = Ship(2, 3, Ship.RIGHT, self.unassigned_ships[0][0], self.unassigned_ships[0][1], self.unassigned_ships[0][2], self.board)
-        self.ships.append(ship)
-        ship = Ship(0, 0, Ship.DOWN, self.unassigned_ships[1][0], self.unassigned_ships[1][1], self.unassigned_ships[1][2], self.board)
-        self.ships.append(ship)
-        ship = Ship(4, 7, Ship.RIGHT, self.unassigned_ships[2][0], self.unassigned_ships[2][1], self.unassigned_ships[2][2], self.board)
-        self.ships.append(ship)
-        ship = Ship(1, 9, Ship.DOWN, self.unassigned_ships[3][0], self.unassigned_ships[3][1], self.unassigned_ships[3][2], self.board)
-        self.ships.append(ship)'''
-        ship = Ship(8, 5, Ship.RIGHT, self.unassigned_ships[4][0], self.unassigned_ships[4][1], self.unassigned_ships[4][2], self.board)
-        self.ships.append(ship)
-        self.unassigned_ships = None
-        self.display_board_with_coordinates(Board.DISPLAY_SHIP_CHARS_YES)
-        input(f"Ships placed for {self.name}, press ENTER to continue")
-
     def place_unassigned_ships(self):
         for unassigned_ship in self.unassigned_ships:
             #print("\n\n\n\n\n\n\n\n\n\n\n\n")
